@@ -45,7 +45,7 @@ public:
     bool isPalindrome(string s)
     {
         string temp = "";
-
+        // removing all non-alphanumeric characters
         for (int j = 0; j < s.length(); j++)
         {
             if (valid(s[j]))
@@ -53,12 +53,12 @@ public:
                 temp.push_back(s[j]);
             }
         }
-
+        // converting all uppercase letters into lowercase letters
         for (int j = 0; j < temp.length(); j++)
         {
             temp[j] = toLowerCase(temp[j]);
         }
-
+        // checking if Palindrome
         return checkPalindrome(temp);
     }
 };
