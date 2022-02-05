@@ -5,9 +5,8 @@ public:
         int j = s.length()-1;
         int i=0,flag=0;
         while(i<j){
-            if(s[i]==s[j]){
+            if(s[i]==s[j])
                 flag=1;
-            }
             else{
                 flag=0;
                 return false;
