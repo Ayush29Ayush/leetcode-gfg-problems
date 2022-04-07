@@ -1,4 +1,5 @@
 // https://leetcode.com/problems/last-stone-weight/discuss/1921100/Simple-easy-c%2B%2B-solution
+// https://www.cplusplus.com/reference/queue/priority_queue/
 
 class Solution {
 public:
