@@ -30,7 +30,7 @@ public:
         {
             if(arr[start]!=arr[end])
             {
-                return false;
+                return 0;
             }
             else
             {
@@ -39,6 +39,6 @@ public:
             }
         }
         
-        return true;
+        return 1;
     }
 };
