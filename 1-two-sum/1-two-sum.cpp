@@ -8,6 +8,8 @@ public:
         
         for(int i=0; i<nums.size(); i++)
         {
+            // mpp.find() will find the first(i.e the key) and not the second(i.e the value)
+            // check gfg for unordered map
             if(mpp.find(target-nums[i])!=mpp.end())
             {
                 ans.push_back(mpp[target-nums[i]]);
