@@ -1,26 +1,27 @@
-// https://leetcode.com/problems/longest-substring-without-repeating-characters/discuss/2133061/O(n)-Solution-in-C%2B%2B-oror-Sliding-Window-oror-HashMaps
+// https://www.youtube.com/watch?v=dvXyTOYVxB8&t=151s
 
 class Solution {
 public:
     int lengthOfLongestSubstring(string s) {
-        if(s.size()<=1) return s.size();
+        int count[256]= {0}; // because here ASCII value will be taken from a(97) to z(122)
+        int left = 0; // starting index of the window
+        int right = 0; // ending index of the window
+        int ans = 0; // length of the longest substring without repeating characters
         
-        map<char, int> mp;
-        int curr=0, res=0;
-        for(int i=0;i<s.size();i++) {
-			//i-curr, gives us the count of characters in our current window (curr is starting of our window)
-            res=max(res, i-curr);
-			
-			//If the character is present and its index is present in current window, we update our current window...
-            if(mp.find(s[i])!=mp.end() && mp[s[i]]>=curr) {
-                curr = mp[s[i]]+1;
+        while(right<s.length())
+        {
+            count[s[right]]++;
+            
+            while(count[s[right]]>1)
+            {
+                count[s[left]]--;
+                left++;
             }
-            mp[s[i]] = i;
+            
+            ans = max(ans,right-left+1);
+            right++;
         }
-		
-		//This is to handle the case when the longest substring is at the end our string, in this case we wont enter the if condition and hence curr variable won't be updated...
-        if(res<s.size()-curr) return s.size()-curr;
-		
-        return res;
+        
+        return ans;
     }
 };
