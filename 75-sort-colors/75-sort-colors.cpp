@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/sort-colors/discuss/2171105/C%2B%2B-solution-Count-0's-1's-2's-0ms-Faster-than-100-TC-greater-O(n)
+
 // Keeping a count of 0's 1's and 2's and updating the original array
 //Time complexity - O(2N)
 class Solution {
