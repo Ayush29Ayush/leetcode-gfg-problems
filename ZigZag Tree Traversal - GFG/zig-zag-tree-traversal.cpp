@@ -108,7 +108,8 @@ class Solution{
     	vector<int> result;
     	if(root == NULL)
     	    return result;
-    	
+    	    
+    	// queue<int> q if integer store karna hai so queue<Node*> because this is the datatype we have to store
     	queue<Node*> q;
     	q.push(root);
     	
