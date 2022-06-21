@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/best-time-to-buy-and-sell-stock/discuss/2178695/C%2B%2B-solution-oror-Simple-oror-Optimized-Solution-oror-TC-greater-O(n)
+
 class Solution {
 public:
     int maxProfit(vector<int>& prices) {
