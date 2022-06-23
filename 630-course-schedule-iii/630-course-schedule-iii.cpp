@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/course-schedule-iii/discuss/2186327/C%2B%2B-solution-oror-Simple-oror-Optimized-Solution-oror-Memoization-greater-Greedy
+
 class Solution {
 public:
     static bool comp(vector<int>&a, vector<int>&b) {
