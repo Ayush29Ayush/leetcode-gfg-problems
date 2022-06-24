@@ -7,7 +7,9 @@ public:
         for(int i=0; i<nums.size();i++)
         {
             sum += nums[i];
-            maximum = max(maximum,sum);
+            
+            if(maximum<sum)
+                maximum = sum;
             
             if(sum<0)
                 sum=0;
