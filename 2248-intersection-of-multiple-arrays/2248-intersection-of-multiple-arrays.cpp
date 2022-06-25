@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/intersection-of-multiple-arrays/discuss/2195235/C%2B%2B-oror-EXPLAINED-oror-BEATS-100-oror-OPTIMIZED
 class Solution {
 public:
     vector<int> intersection(vector<vector<int>>& nums) {
