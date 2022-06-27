@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/partitioning-into-minimum-number-of-deci-binary-numbers/discuss/2202970/C%2B%2B-oror-DETAILED_EXPLAINED-oror-BEATS-100-oror-TC-greater-O(n)
+
 class Solution {
 public:
     int minPartitions(string n) {
