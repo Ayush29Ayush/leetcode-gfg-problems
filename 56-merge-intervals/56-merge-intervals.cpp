@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/merge-intervals/discuss/2205936/C%2B%2B-oror-DETAILED_EXPLAINATION-oror-BEATS-100-oror-OPTIMIZED
+
 class Solution {
 public:
     vector<vector<int>> merge(vector<vector<int>>& intervals) {
