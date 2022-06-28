@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/minimum-deletions-to-make-character-frequencies-unique/discuss/2208095/C%2B%2B-oror-DETAILED_EXPLAINATION-oror-BEATS-100-oror-OPTIMIZED
 class Solution {
 public:
     int minDeletions(string s) {
