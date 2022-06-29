@@ -1,29 +1,20 @@
-// https://leetcode.com/problems/find-the-duplicate-number/discuss/1892872/C%2B%2B-oror-Algorithm-oror-4-Approaches-oror-Binary-Search-oror-Brute-Force-oror-cnt-array-oror-map
-
 class Solution {
 public:
     int findDuplicate(vector<int>& nums) {
-        int low = 1, high = nums.size() - 1, cnt;
+        int n = nums.size();
+        int answer;
         
-        while(low <=  high)
+        sort(nums.begin(),nums.end());
+        
+        for(int i=0;i<n-1;i++)
         {
-            int mid = low + (high - low) / 2;
-            cnt = 0;
-            // cnt number less than equal to mid
-            for(int n : nums)
+            if(nums[i] == nums[i+1])
             {
-                if(n <= mid)
-                    ++cnt;
+                answer =  nums[i]; 
+                break;
             }
-            // binary search on left
-            if(cnt <= mid)
-                low = mid + 1;
-            else
-            // binary search on right
-                high = mid - 1;
-            
         }
-        return low;
+        
+        return answer;
     }
-	// for github repository link go to my profile.
 };
