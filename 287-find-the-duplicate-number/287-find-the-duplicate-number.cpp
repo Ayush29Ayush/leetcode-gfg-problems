@@ -1,3 +1,5 @@
+// Brute Force with sorting => Time Complexity:O(Nlogn + N)
+
 class Solution {
 public:
     int findDuplicate(vector<int>& nums) {
