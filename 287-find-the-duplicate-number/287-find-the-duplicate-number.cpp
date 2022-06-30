@@ -21,7 +21,7 @@
 //     }
 // };
 
-// Omtimized Approach => Time Complexity:O(N)
+// Optimized Approach => Time Complexity:O(N)
 class Solution {
 public:
     int findDuplicate(vector<int>& nums) {
@@ -33,6 +33,7 @@ public:
         {
             mp[nums[i]]++;
         }
+        
         for(auto i : mp)
         {
             if(i.second > 1)
