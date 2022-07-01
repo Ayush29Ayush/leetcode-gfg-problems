@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/maximum-units-on-a-truck/discuss/2220692/C%2B%2B-oror-EXPLAINATION-oror-BEATS-100-oror-GREEDY-ororOPTIMIZED
 class Solution {
 public:
     // comparator function to sort in vector w.r.t no. of units per boxes in descending order
