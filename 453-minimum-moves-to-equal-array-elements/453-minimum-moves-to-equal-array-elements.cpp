@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/minimum-moves-to-equal-array-elements/discuss/2221215/C%2B%2B-oror-EXPLAINATION-oror-BEATS-100-oror-OPTIMIZED
+
 class Solution {
 public:
     int minMoves(vector<int>& nums) {
