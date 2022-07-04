@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/merge-sorted-array/discuss/2210180/C%2B%2B-oror-DETAILED_EXPLAINATION-oror-OPTIMIZED
+
 class Solution {
 public:
     void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
