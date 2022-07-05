@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/longest-consecutive-sequence/discuss/2239045/C%2B%2B-oror-BEATS-95-oror-O(N)-ororOPTIMIZED
+
 class Solution {
 public:
     int longestConsecutive(vector<int>& nums) {
