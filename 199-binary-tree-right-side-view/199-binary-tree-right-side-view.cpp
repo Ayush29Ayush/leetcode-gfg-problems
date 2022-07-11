@@ -9,24 +9,26 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
+
+//! Using Reverse PreOrder Traversal (Recursive)
 class Solution {
 public:
-    
-    vector<int> solve(TreeNode* root, vector<int> res, int lvl){
-        if (root==NULL){
-            return res;
-        }
-        if (res.size()==lvl){                 // root
-            res.push_back(root->val);
-        }
-        res = solve(root->right , res , lvl + 1);     // right
-        res = solve(root->left , res , lvl + 1);       // left
-        return res;
+    void RightView(TreeNode* root, int level, vector<int>&ans)
+    {
+        if(root==NULL)
+            return;
+        
+        if(level == ans.size())
+            ans.push_back(root->val);
+        
+        RightView(root->right, level+1, ans);
+        RightView(root->left, level+1, ans);
     }
     
     vector<int> rightSideView(TreeNode* root) {
-        vector<int> res;
-        res = solve( root , res , 0 );
-        return res;
+        vector<int> ans;
+        RightView(root, 0, ans);
+        
+        return ans;
     }
 };
