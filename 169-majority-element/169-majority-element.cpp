@@ -3,7 +3,7 @@
 2. The element which is present more than size/2 time must appear at the mid of the vector.
 3. Return the middle element.
 */
-
+// using sorting -> O(NlogN)
 // class Solution {
 // public:
 //     int majorityElement(vector<int>& nums) {
