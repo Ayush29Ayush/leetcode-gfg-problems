@@ -36,6 +36,7 @@
 //     }
 //     int uniquePaths(int m, int n) {
 //         vector<vector<int>> dp(m+1,vector<int>(n+1,-1));
+//         vector<vector<int>> v(rows, vector<int> (cols, 1));  /*creates 2d vector “v[rows][cols]” and initializes all elements to “1” (default value is 0)*/
         
 //         int ans = countPaths(0,0,m,n,dp);
 //         return ans;
