@@ -58,21 +58,21 @@ public:
                         
                         // Processing the duplicates of number 3
                         while(front < back && nums[front] == quad[2]) 
-                            ++front;
+                            front++;
                         
                         // Processing the duplicates of number 4
                         while(front < back && nums[back] == quad[3]) 
-                            --back;
+                            back--;
                     }
                     
                 }
                 // Processing the duplicates of number 2
                     while(j + 1 < n && nums[j + 1] == nums[j]) 
-                        ++j;
+                        j++;
             }
             // Processing the duplicates of number 2
                     while(i + 1 < n && nums[i + 1] == nums[i]) 
-                        ++i;
+                        i++;
         }
         
         return res;
