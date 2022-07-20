@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/number-of-matching-subsequences/discuss/2306365/C%2B%2B-binarysearch-and-stuff
+
 class Solution {
 public:
     int numMatchingSubseq(string s, vector<string>& words) {
