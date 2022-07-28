@@ -12,9 +12,15 @@ public:
         for(auto i : t)
             mp2[i]++;
         
-        for(int i = 0; i<s.size(); i++)
+        // for(int i = 0; i<s.size(); i++)
+        // {
+        //     if(mp1[s[i]]!=mp2[s[i]])
+        //         return false;
+        // }
+        
+        for(auto i : s)
         {
-            if(mp1[s[i]]!=mp2[s[i]])
+            if(mp1[i]!=mp2[i])
                 return false;
         }
         
