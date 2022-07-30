@@ -14,8 +14,13 @@
 class Solution {
 public:
     TreeNode* searchBST(TreeNode* root, int val) {
-        if (!root) return NULL;
-        if (root->val == val) return root;
-        return searchBST(root->val > val ? root->left : root->right, val);
+        if(root == NULL)
+            return NULL;
+        if(root->val == val)
+            return root;
+        else if(val > root->val)
+            return searchBST(root->right,val);
+        else
+            return searchBST(root->left,val);
     }
 };
