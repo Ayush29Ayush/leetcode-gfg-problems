@@ -9,6 +9,8 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
+
+// refer this if doubts -> https://youtu.be/pDURIj98e0I?t=261
 class Solution {
 public:
     bool isBST(TreeNode* root, long min, long max)
