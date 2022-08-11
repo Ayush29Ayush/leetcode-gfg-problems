@@ -8,6 +8,7 @@
  * };
  */
 
+// https://youtu.be/pDURIj98e0I?t=1695
 class Solution {
 public:
     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
@@ -15,13 +16,13 @@ public:
         if(root==NULL)
             return NULL;
         
-    if(root->val < p->val && root->val < q->val)
-        return lowestCommonAncestor(root->right, p, q);
-    
-    else if(root->val > p->val && root->val > q->val)
-        return lowestCommonAncestor(root->left, p, q);
-    
-    else
-        return root;
+        // if you are in the left part, then find in the right
+        if(root->val < p->val && root->val < q->val)
+            return lowestCommonAncestor(root->right, p, q);
+        // if you are in the right part, then find in the left
+        else if(root->val > p->val && root->val > q->val)
+            return lowestCommonAncestor(root->left, p, q);
+        else
+            return root;
     }
 };
