@@ -1,43 +1,35 @@
 class Solution {
 public:
-
-    void Sum(vector<int>& candidates, int target, vector<vector<int> >& res, vector<int>& r, int i)
+    void solve(int index, int target, vector<int> &candidates , vector<int> &ds, vector<vector<int>> &ans)
     {
-        
-        if(target == 0)
+        // base case
+        if(index==candidates.size())
         {
-            // if we get exact answer
-            res.push_back(r);
+            if(target==0)
+                ans.push_back(ds);
             return;
         }
         
-        while(i <  candidates.size() && target - candidates[i] >= 0)
+        //if it picks then it has two options => pick the same element again or don't pick that element and go to next index.
+        //pick the element
+        if(candidates[index]<=target)
         {
-            // Till every element in the array starting
-            // from i which can contribute to the target
-            r.push_back(candidates[i]);// add them to vector
+            ds.push_back(candidates[index]);
+            //recursive call to pick the element
+            solve(index, target-candidates[index], candidates, ds, ans);
             
-            // recur for next numbers
-            Sum(candidates,target - candidates[i],res,r,i);
-            ++i;
-            
-            // Remove number from vector (backtracking)
-            r.pop_back();
+            //after returning to this recursive state, remove the last added element.
+            ds.pop_back();
         }
-}
-    
-     
+        
+        // not pick the element
+        solve(index+1, target, candidates, ds, ans);
+    }
     vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
-        sort(candidates.begin(),candidates.end()); // sort candidates array
+        vector<vector<int>> ans;
+        vector<int> ds;
+        solve(0, target, candidates, ds, ans);
         
-        // remove duplicates
-        candidates.erase(unique(candidates.begin(),candidates.end()),candidates.end());
-        
-        vector<int> r;
-        vector<vector<int> > res;
-        
-        Sum(candidates,target,res,r,0);
-        
-        return res;
+        return ans;
     }
 };
