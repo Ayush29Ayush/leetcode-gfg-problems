@@ -1,3 +1,4 @@
+// https://www.youtube.com/watch?v=G1fRTGRxXU8&list=PLgUwDviBIf0rGlzIn_7rsaR2FQ5e6ZOL9&index=10
 //in case not picking duplicates just sort the given array and then for loop.
 class Solution {
 public:
