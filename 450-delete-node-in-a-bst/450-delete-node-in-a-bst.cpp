@@ -32,20 +32,20 @@ public:
             // if 0 children 
             if(root->right==NULL && root->left == NULL)
             {
-                // delete root;
+                delete root;
                 return NULL;
             }
             // if 1 children either left or right
             if(root->left!=NULL && root->right==NULL)
             {
                 TreeNode* temp = root->left;
-                // delete root;
+                delete root;
                 return temp;
             }
             if(root->left==NULL && root->right!=NULL)
             {
                 TreeNode* temp = root->right;
-                // delete root;
+                delete root;
                 return temp;
             }
             // if 2 children 
