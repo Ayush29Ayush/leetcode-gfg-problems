@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/discuss/2555708/Easy-solution-Explained-oror-Beginner-Friendly-oror-Best-Method
 class Solution {
 public:
     int maxProfit(int k, vector<int>& price) {
