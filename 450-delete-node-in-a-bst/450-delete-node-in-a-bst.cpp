@@ -9,9 +9,12 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-// babbar approach
+//babbar approach.
+//algo is just check whether given node is in left part or in right part or it is the root itself. if found ,then it has four states 0,1,2 children but the catch is in 2 children -left,right. So in that case just check lowest node in root->right and simply copy that in root node and store it in mini variable and root -> right is given in delete call to delete mini and return root.
+
 class Solution {
 public:
+    
     TreeNode* getMin(TreeNode* root){
         //temp is minimum node from that root.
         TreeNode* temp = root ;
@@ -22,53 +25,42 @@ public:
     }
     
     TreeNode* deleteNode(TreeNode* root, int key) {
-        //! Base Case
-        if(root==NULL)
-            return root;
-        
-        if(root->val == key)
-        {
-            // yahan sab likho
-            // if 0 children 
-            if(root->right==NULL && root->left == NULL)
-            {
-                delete root;
+        //babbar approach.
+        //base case
+        if(root == NULL){
+            return NULL;
+        }
+        if(root -> val == key){
+            //if no child.
+            if(!(root -> left) && !(root -> right)){
                 return NULL;
             }
-            // if 1 children either left or right
-            if(root->left!=NULL && root->right==NULL)
-            {
-                TreeNode* temp = root->left;
-                delete root;
-                return temp;
+            //means left child is not null
+            else if((root -> left) && !(root -> right)){
+                return root -> left;
             }
-            if(root->left==NULL && root->right!=NULL)
-            {
-                TreeNode* temp = root->right;
-                delete root;
-                return temp;
+            else if(!(root -> left) && (root -> right)){
+                return root -> right;
             }
-            // if 2 children 
-            if(root->left!=NULL && root->right!=NULL)
-            {
-                TreeNode* rightwalaNode = root->right;
-                int mini = getMin(rightwalaNode)->val;
+            else{
+                //do child hai aur isi ko handle karna hai.
+                //root -> right me jaao aur smallest element ko root me copy kardo.
+                TreeNode* rightNode = root -> right;
+                int mini = getMin(rightNode) -> val;
                 root -> val = mini;
+                //now call delete function and delete the mini node .
                 root -> right = deleteNode(root -> right,mini);
                 return root;
             }
         }
-        
-        if(root->val < key)
-        {
-            root->right = deleteNode(root->right, key);
+        else if(root -> val > key){
+            //left me jao
+            root -> left = deleteNode(root -> left,key);
         }
-        
-        if(root->val > key)
-        {
-            root->left = deleteNode(root->left, key);
+        else{
+            //right me jao
+            root -> right = deleteNode(root -> right,key);
         }
-        
-        return root;
+       return root;
     }
 };
