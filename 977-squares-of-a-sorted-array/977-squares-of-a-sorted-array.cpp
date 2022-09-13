@@ -9,6 +9,8 @@
 //     }
 // };
 
+//! T.C -> O(N)
+//! S.C -> O(N)
 class Solution {
 public:
     vector<int> sortedSquares(vector<int>& nums) {
