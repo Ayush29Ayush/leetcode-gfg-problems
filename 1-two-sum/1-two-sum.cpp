@@ -12,6 +12,7 @@ public:
             // check gfg for unordered map
             if(mpp.find(target-nums[i])!=mpp.end())
             {
+                // this will push_back the value
                 ans.push_back(mpp[target-nums[i]]);
                 ans.push_back(i);
                 return ans;
