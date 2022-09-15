@@ -19,6 +19,9 @@
 // };
 
 //! Optimised solution using stack
+//! TC - O(n)
+//! refer this -> https://www.youtube.com/watch?v=dvMdn0ARtf0
+//! refer striver video too -> https://www.youtube.com/watch?v=Du881K7Jtk8&t=74s
 class Solution {
 public:
     vector<int> nextGreaterElements(vector<int> &nums){
