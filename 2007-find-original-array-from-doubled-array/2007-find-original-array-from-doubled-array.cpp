@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/find-original-array-from-doubled-array/discuss/2577700/C%2B%2B-or-HashmapSorting(NlogN)-Approach
+
 class Solution {
 public:
     vector<int> findOriginalArray(vector<int>& changed) {
