@@ -34,7 +34,7 @@ public:
                     end--;
             }
         }
-        
+        // to remove duplicates use stl approach
         sort( vec.begin(), vec.end() );
         vec.erase( unique( vec.begin(), vec.end() ), vec.end() );
 
