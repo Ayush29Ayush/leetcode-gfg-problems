@@ -18,7 +18,7 @@ public:
         if(nums[i]>=left)
             start=i;
         
-        //subtract the two ones to get the distance, number of valid values, between the two poiters & add it to the counter
+        //subtract the two ones to get the distance, number of valid values, between the two pointers & add it to the counter
         counter+=start-end;
     }
     
