@@ -1,3 +1,4 @@
+// Ex -> num = 9937
 class Solution {
 public:
     int maximumSwap(int num) {
@@ -6,6 +7,8 @@ public:
         
         vector<int> pos(n,n-1);
         
+        // yeh position store karne ke liye hai for max element when traversed from right to left
+        // pos = {1,1,3,3} for num = 9937
         for(int i = n-2; i>=0; i--)
         {
             if(s[i]>s[pos[i+1]])
@@ -14,7 +17,8 @@ public:
                 pos[i] = pos[i+1];
         }
         
-        // to find the element jiske saath swap karna hai 
+        // agar starting se hi max elements mil rahe they toh unke skip marte jao
+        // and find the element jiske saath swap kar sakte hai 
         int i = 0;
         while(i<n && s[i] >= s[pos[i]])
             i++;
