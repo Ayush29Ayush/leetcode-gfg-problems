@@ -1,6 +1,6 @@
 // lets take target = 5
 
-
+// sum after 0th move = 0
 // sum after 1st move = 1
 // sum after 2nd move = 3
 // sum after 3rd move = 6 so stop here
@@ -11,6 +11,13 @@
 // so if we need 1+2+3 - 2*(2) = TARGET
 // we conclude SUM - TARGET = 2*X 
 // so the difference should be divisible by 2
+
+//! DRY RUN
+// till the 3rd move, sum = 6 as written above. so since 6>5 stop here.
+// at this point sum = 6 and steps = 3
+// now sum-target = 1 so sum = 10 and steps = 4
+// now sum-target = 5 so sum = 15 and steps = 5
+// now sum-target = 10 which is divisible by 2 so stop here.
         
 
 class Solution {
