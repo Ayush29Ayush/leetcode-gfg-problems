@@ -16,19 +16,19 @@ public:
                 freq3[tops[i]]++;
         }
         
-        int ans = INT_MAX;
         
+        
+        // all possibilities from 1 to 6
         for(int i = 1; i<=6; i++)
         {
             if(freq1[i] + freq2[i] - freq3[i] == size)
             {
                 int minimumswap = min(freq1[i],freq2[i]) - freq3[i];
-                ans = min(ans,minimumswap);
+                int ans = min(ans,minimumswap);
                 return ans;
             }
         }
         
         return -1;
-        
     }
 };
