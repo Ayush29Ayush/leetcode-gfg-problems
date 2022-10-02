@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/number-of-dice-rolls-with-target-sum/discuss/2649171/C%2B%2B-oror-EXPLAINED-oror-BEATS-90-oror-OPTIMIZED-oror
 class Solution {
 public:
     int numRollsToTarget(int d, int f, int target) {
