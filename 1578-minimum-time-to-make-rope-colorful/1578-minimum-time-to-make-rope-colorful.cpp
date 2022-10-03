@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/minimum-time-to-make-rope-colorful/discuss/2653227/C%2B%2B-oror-EASY-oror-EXPLAINED-oror-OPTIMIZED-oror
 class Solution {
 public:
     int minCost(string s, vector<int>& cost) 
