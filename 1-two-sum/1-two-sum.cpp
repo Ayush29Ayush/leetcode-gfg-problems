@@ -11,6 +11,8 @@ public:
         {
             // mpp.find() will find the first(i.e the key) and not the second(i.e the value)
             // check gfg for unordered map
+            
+            // agar voh number mil gaya then push it to ans
             if(mpp.find(target-nums[i])!=mpp.end())
             {
                 // this will push_back the value
@@ -18,7 +20,10 @@ public:
                 ans.push_back(i);
                 return ans;
             }
-            mpp[nums[i]] = i;
+            else
+            {
+                mpp[nums[i]] = i;
+            }
         }
         return ans;
     }
