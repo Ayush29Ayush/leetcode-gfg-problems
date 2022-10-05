@@ -20,6 +20,7 @@ public:
                 ans.push_back(i);
                 return ans;
             }
+            // varna voh number aur uska index store kardo
             else
             {
                 mpp[nums[i]] = i;
