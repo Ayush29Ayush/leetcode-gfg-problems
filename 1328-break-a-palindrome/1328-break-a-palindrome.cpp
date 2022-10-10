@@ -1,3 +1,8 @@
+// when i==n/2 then
+// i is at mid and the length is odd
+// "aabaa" if you character 'b' to some other character then it is still Palindrome, no need to check on that index that's why I put a continue statement.
+// "abba" but in this, you change the character to mid-index then it is not palindrome
+
 class Solution {
 public:
     string breakPalindrome(string s)
