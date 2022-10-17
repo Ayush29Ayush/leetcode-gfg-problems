@@ -15,21 +15,20 @@
 //     }
 // };
 
-//! using DP
+//! using DP - using TABULATION
 class Solution {
 public:
     int fib(int n) {
-        int ans[n+2];
+        vector<int> dp(n+2,-1);
         
-        ans[0] = 0;
-        ans[1] = 1;
+        dp[0] = 0;
+        dp[1] = 1;
         
         for(int i = 2; i<=n; i++)
         {
-            ans[i] = ans[i-1] + ans[i-2];
+            dp[i] = dp[i-1] + dp[i-2];
         }
         
-        return ans[n];
-        
+        return dp[n];
     }
 };
