@@ -16,7 +16,8 @@
 //     }
 // };
 
-//! Using map
+//! Not using map
+//! Using freq vector
 class Solution {
 public:
     bool checkIfPangram(string sentence) {
