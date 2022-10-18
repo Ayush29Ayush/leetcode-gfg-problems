@@ -1,3 +1,5 @@
+// my solution => https://leetcode.com/problems/count-and-say/discuss/2716207/C%2B%2B-oror-EASY-oror-DETAILED-EXPLAINATION-oror-OPTIMIZED
+
 class Solution {
 public:
     string countAndSay(int n) {
