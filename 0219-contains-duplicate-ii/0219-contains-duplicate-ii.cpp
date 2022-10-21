@@ -1,3 +1,4 @@
+// my discuss forum post => https://leetcode.com/problems/contains-duplicate-ii/discuss/2727290/C%2B%2B-oror-EASY-oror-DETAILED-EXPLAINATION-oror-OPTIMIZED
 class Solution {
 public:
     bool containsNearbyDuplicate(vector<int>& nums, int k) {
@@ -17,6 +18,7 @@ public:
             // and if the number is already present in the map, then update the position of that number
             mp[nums[i]] = i;
         }
+        // after the complete traversal, if we don't find a pair to satisfy the condition, return false
         return false;
     }
 };
