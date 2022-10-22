@@ -1,28 +1,45 @@
+// https://www.youtube.com/watch?v=rw660m-QLDo
 class Solution {
 public:
-    bool check(int charMap[58], int window[58]) {
-        for (int i=0; i<58; i++) if (charMap[i] > window[i]) return false;
-        return true;
-    }
     string minWindow(string s, string t) {
-        if (s.size() < t.size()) return "";
-        int charMap[58] = {0}, window[58] = {0}, minLen = INT_MAX, start = -1;
-        for (char &c : t) charMap[c-'A']++;
-        string res = "";
-        for (int i=0,j=0; j<s.size(); j++) {
-            window[s[j]-'A']++;
-            while (window[s[i]-'A'] > charMap[s[i]-'A'] && i<j) {
-                window[s[i]-'A']--;
-                i++;
-            }
-            if (s.size() == 0 || j-i+1 < minLen) {
-                if (check(charMap, window)) {
-                    minLen = j-i+1;
-                    start = i;
+        
+        if(s.length()==0 || t.length()==0 || s.length()<t.length())
+            return "";
+        
+        vector<int> v(256,0);
+        for(int i=0;i<t.length();++i)
+              v[t[i]]++;
+        
+        int start=0, end=0, ans_start=0;
+        int minlength=INT_MAX;
+        int count=0;
+        
+        while(end<s.length())
+        {
+            if(v[s[end]]>0)
+                 count++;
+            
+            v[s[end]]--;
+            while(count==(int)t.length())//until the the window condition is satified keep shriking the window
+            {
+                if(minlength>end-start+1)
+                {
+                    minlength=end-start+1;//update the minimum length continuously
+                    ans_start=start; //starting index of the answer
                 }
+                
+                v[s[start]]++;
+                if(v[s[start]]>0)
+                    count--;
+                
+                start++;
             }
+            end++;
         }
-
-        return start == -1 ? "" : s.substr(start,minLen);
+        
+        if(minlength==INT_MAX) //no string found
+            return "";
+        
+        return s.substr(ans_start,minlength);
     }
 };
