@@ -1,4 +1,6 @@
 // https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/discuss/2798136/LeetCode-The-Hard-Way-Explained-Line-By-Line-(C%2B%2B-Python-Java-Go-Kotlin-Rust)
+
+//! STRING WALA SOLUTION
 // class Solution {
 // public:
 //     string removeDuplicates(string s) {
@@ -17,6 +19,8 @@
 //     }
 // };
 
+
+//! STACK WALA SOLUTION - LOGOC SAME HI HAI
 class Solution {
 public:
     string removeDuplicates(string s) {
