@@ -1,23 +1,51 @@
+//instead of using different visited matrix we mark the given board itself for keeping track of visited and backtrack while all four conditions are got and if false then put the picked character back to board[i][j].
 class Solution {
 public:
-    bool exist(vector<vector<char>>& board, string word) {
-        for (unsigned int i = 0; i < board.size(); i++) 
-            for (unsigned int j = 0; j < board[0].size(); j++) 
-                if (dfs(board, i, j, word))
-                    return true;
+    bool solve(int i,int j,vector<vector<char>>& board,string &word,int n,int m,int k){
+        //base case
+        if(k == word.size()){
+            return true;
+        }
+        if(i < 0 || j < 0 || i > n-1 || j > m-1 || board[i][j] == '.'){
+            return false;
+        }
+        if(board[i][j] != word[k]){
+            return false;
+        }
+        
+        //mark visited
+        board[i][j] = '.';
+        
+        //left call
+        bool left = solve(i,j-1,board,word,n,m,k+1);
+        //ans.pop_back();
+        bool right = solve(i,j+1,board,word,n,m,k+1);
+        bool up = solve(i-1,j,board,word,n,m,k+1);
+        bool down = solve(i+1,j,board,word,n,m,k+1);
+        
+        if(left || right || up || down){
+            return true;
+        }
+        
+        //backtrack jo character uthaya hai wapas rakdo.
+        board[i][j] = word[k];
         return false;
     }
-
-    bool dfs(vector<vector<char>>& board, int i, int j, string& word) {
-        if (!word.size())
-            return true;
-        if (i<0 || i>=board.size() || j<0 || j>=board[0].size() || board[i][j] != word[0])  
-            return false;
-        char c = board[i][j];
-        board[i][j] = '*';
-        string s = word.substr(1);
-        bool ret = dfs(board, i-1, j, s) || dfs(board, i+1, j, s) || dfs(board, i, j-1, s) || dfs(board, i, j+1, s);
-        board[i][j] = c;
-        return ret;
+    
+    bool exist(vector<vector<char>>& board, string word) {
+        int n = board.size();
+        int m = board[0].size();
+        
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                if(board[i][j] != '.'){
+                    bool res = solve(i,j,board,word,n,m,0);
+                    if(res == true){
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
     }
 };
