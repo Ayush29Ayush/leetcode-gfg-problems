@@ -1,3 +1,4 @@
+// MY DISCUSS FORUM SOLUTION => https://leetcode.com/problems/minimum-average-difference/discuss/2874836/C%2B%2B-oror-EASY-oror-DETAILED-EXPLAINATION-oror-O(N)
 class Solution {
 public:
     int minimumAverageDifference(vector<int>& nums) {
