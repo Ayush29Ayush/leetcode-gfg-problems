@@ -9,6 +9,7 @@
  * };
  */
 
+//! MY DISCUSS FORUM SOLUTION => https://leetcode.com/problems/middle-of-the-linked-list/discuss/2878632/C%2B%2B-oror-2-METHODS-oror-DETAILED-EXPLAINATION-oror-O(N)
 // class Solution {
 // public:
 //     ListNode* middleNode(ListNode* head) {
