@@ -8,6 +8,8 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
+
+//! MY DISCUSS FORUM SOLUTION => https://leetcode.com/problems/odd-even-linked-list/discuss/2881829/C%2B%2B-oror-EASY-oror-DETAILED-EXPLAINATION-oror-O(N)
 class Solution {
 public:
     ListNode* oddEvenList(ListNode* head) {
