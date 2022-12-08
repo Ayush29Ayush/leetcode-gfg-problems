@@ -6,6 +6,8 @@ public:
       int m = s2.size();
 
       vector<vector<int>> dp(n+1,vector<int>(m+1, -1));
+        
+      //! LCS ka code
       for (int i = 0; i <= n; i++) dp[i][0] = 0;
       for (int i = 0; i <= m; i++) dp[0][i] = 0;
 
@@ -17,14 +19,15 @@ public:
             dp[ind1][ind2] = 0 + max(dp[ind1 - 1][ind2], dp[ind1][ind2 - 1]);
         }
       }
-
+      
+      //! Reqd parameters taken from LCS
       int len = dp[n][m];
       int i = n;
       int j = m;
 
       int index = len - 1;
       string ans = "";
-
+      //! Making the ans string
       while (i > 0 && j > 0) {
         if (s1[i - 1] == s2[j - 1]) {
           ans += s1[i-1];
