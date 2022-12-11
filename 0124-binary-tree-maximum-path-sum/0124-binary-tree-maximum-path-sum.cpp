@@ -9,6 +9,7 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
+// https://leetcode.com/problems/binary-tree-maximum-path-sum/discuss/2899197/C%2B%2B-Faster-Solutions
 class Solution {
 public:
   int findMaxPathSum(TreeNode * root, int & maxi) {
