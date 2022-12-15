@@ -42,6 +42,8 @@ public:
 		int n=p.size();
 		vector<vector<int>> dp(n+1,vector<int>(2,-1));
         
+        // base case
+        // agar end tak nahi sell kiya and n tak aa gaye no now can't sell so profit = 0
         dp[n][0] = dp[n][1] = 0;
         
 		for(int i=n-1;i>=0;i--){
