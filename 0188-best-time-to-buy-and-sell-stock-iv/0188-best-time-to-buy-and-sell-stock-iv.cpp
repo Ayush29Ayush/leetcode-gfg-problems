@@ -27,9 +27,27 @@ public:
     
     int maxProfit(int k, vector<int>& prices) {
         int n = prices.size();
-        vector<vector<vector<int>>> dp(n,vector<vector<int>> (2,vector<int>(k+1,-1)));
+        // vector<vector<vector<int>>> dp(n,vector<vector<int>> (2,vector<int>(k+1,-1)));
         
-        int ans = getAns(prices,n,0,1,k,dp);
-        return ans;
+        // int ans = getAns(prices,n,0,1,k,dp);
+        // return ans;
+        
+        //! TABULATION
+        vector<vector<vector<int>>> dp(n+1,vector<vector<int>> (2,vector<int>(k+1,0)));
+        
+        for(int ind=n-1; ind>=0; ind--)
+        {
+            for(int buy=0; buy<=1; buy++)
+            {
+                for(int cap=1; cap<=k; cap++) // for(int cap=0; cap<=2; cap++) since cap=0 mein 0 value hai acc to base case
+                {
+                    if(buy==1)
+                        dp[ind][buy][cap] = max(0 + dp[ind+1][1][cap], -prices[ind] + dp[ind+1][0][cap]);
+                    if(buy==0)
+                        dp[ind][buy][cap] = max(0 + dp[ind+1][0][cap], +prices[ind] + dp[ind+1][1][cap-1]);
+                }
+            }
+        }
+        return dp[0][1][k];
     }
 };
