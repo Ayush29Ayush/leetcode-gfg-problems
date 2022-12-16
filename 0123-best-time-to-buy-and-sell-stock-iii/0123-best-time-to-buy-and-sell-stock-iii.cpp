@@ -10,16 +10,16 @@ public:
 
         int profit;
 
-        if(buy==0)
-        {   
-            // We can either buy or not_buy the stock, then take the max
-            profit = max(0 + getAns(Arr,n,ind+1,0,cap,dp), -Arr[ind] + getAns(Arr,n,ind+1,1,cap,dp));
-        }
-
         if(buy==1)
         {   
+            // We can either buy or not_buy the stock, then take the max
+            profit = max(0 + getAns(Arr,n,ind+1,1,cap,dp), -Arr[ind] + getAns(Arr,n,ind+1,0,cap,dp));
+        }
+
+        if(buy==0)
+        {   
             // We can eiter sell or not_sell the stock, then take the max
-            profit = max(0 + getAns(Arr,n,ind+1,1,cap,dp), Arr[ind] + getAns(Arr,n,ind+1,0,cap-1,dp));
+            profit = max(0 + getAns(Arr,n,ind+1,0,cap,dp), Arr[ind] + getAns(Arr,n,ind+1,1,cap-1,dp));
         }
 
         return dp[ind][buy][cap] = profit;
@@ -30,7 +30,7 @@ public:
         int n = prices.size();
         vector<vector<vector<int>>> dp(n,vector<vector<int>> (2,vector<int>(3,-1)));
         
-        int ans = getAns(prices,n,0,0,2,dp);
+        int ans = getAns(prices,n,0,1,2,dp);
         return ans;
     }
 };
