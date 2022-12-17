@@ -26,6 +26,7 @@ public:
                 // int take = +price[ind] + func(ind+2, 1, price, n, dp);
                 // int nottake = 0 + func(ind+1, 0, price, n, dp);
                 // return dp[ind][buy] = max(take, nottake);
+            // ind+2 after selling so that 1 day ka cooldown mil jaye
             return dp[ind][buy] = max(+price[ind] + func(ind+2, 1, price, n, dp), 0 + func(ind+1, 0, price, n, dp));
         }
         return dp[ind][buy];
