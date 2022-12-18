@@ -13,6 +13,7 @@ public:
         double time_sum = 0;
         for(int i=0; i<piles.size(); i++)
         {
+            //basically ceil() value leni hai
             // for ex-> speed = 5 and piles[i]=7 so, ek baar mein 5 and dusri baar mein 2. so 7 ko khaane mein 2hour laga
             // so quotient + remainder
             time_sum += (piles[i]/mid)+((piles[i]%mid)!=0);
