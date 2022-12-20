@@ -11,26 +11,25 @@
 class Solution {
 public:
     ListNode* reverseList(ListNode* head) {
-        
-        if(head == NULL){
+        if(head==NULL)
             return NULL;
-        }
-        
-        if(head -> next == NULL){
+        if(head->next==NULL)
             return head;
-        }
         
         ListNode* prev = NULL;
         ListNode* curr = head;
-        ListNode* next = head;
+        ListNode* aage_ka_tracker = head;
         
-        while(curr != NULL){
-            next = curr -> next;
+        while(curr!=NULL)
+        {
+            // aage wale ka track pehle rakhlo
+            aage_ka_tracker = curr -> next;
+            // sabko ek ek piche point karana hai
             curr -> next = prev;
             
+            // ab ek ek step aage badhado
             prev = curr;
-            curr = next;
-            
+            curr = aage_ka_tracker;
         }
         return prev;
     }
