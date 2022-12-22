@@ -11,27 +11,23 @@
  */
 
 // Using Morris Traversal
+// refer this dry run -> https://youtu.be/2BdY9fixMrM?t=1260
 class Solution {
 public:
-    void flatten(TreeNode* root) {
-        if(root==NULL)
-            return;
-        
-        while(root!=NULL)
-        {
-            if(root->left)
+	void flatten(TreeNode* root) {
+		TreeNode* cur = root;
+		TreeNode* pre = NULL;
+		while(cur){
+			if(cur->left)
             {
-                TreeNode *leftpointer = root->left;
-                TreeNode *current = leftpointer;
-                while(current->right!=NULL)
-                {
-                    current=current->right;
-                }
-                current->right=root->right;//Morris Traversal main step
-                root->left=NULL;
-                root->right=leftpointer;
-            }
-            root=root->right;
-        }
-    }
+				pre = cur->left;
+				while(pre->right)
+                    pre = pre->right;
+				pre->right = cur->right;
+				cur->right = cur->left;
+				cur->left = NULL;
+			}
+			cur = cur->right;
+		}
+	}
 };
