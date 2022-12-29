@@ -8,6 +8,7 @@ public:
         return a < b;
     }
     string kthLargestNumber(vector<string>& nums, int k) {
+        // Sort the array using custom sort (otherwise we will get lexicographical order), then return kth largest.
         sort(nums.begin(), nums.end(), compare);
         return nums[nums.size()-k];
     }
