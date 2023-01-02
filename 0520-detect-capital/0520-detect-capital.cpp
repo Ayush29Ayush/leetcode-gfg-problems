@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/detect-capital/discuss/2982608/Easiest-C%2B%2B-solution-oror-O(N)-oror-0ms
 class Solution {
 public:
     bool detectCapitalUse(string word) {
