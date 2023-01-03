@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/delete-columns-to-make-sorted/discuss/2989470/Easiest-C%2B%2B-solution-with-detailed-explanation
+// MY DISCUSS FORUM POST => https://leetcode.com/problems/delete-columns-to-make-sorted/discuss/2989470/Easiest-C%2B%2B-solution-with-detailed-explanation
 class Solution {
 public:
     int minDeletionSize(vector<string>& strs) {
