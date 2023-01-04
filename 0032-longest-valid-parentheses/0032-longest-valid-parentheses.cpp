@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/longest-valid-parentheses/discuss/1139990/Longest-Valid-Parentheses-or-Short-and-Easy-w-Explanation-using-stack
 class Solution {
 public:
     int longestValidParentheses(string s) {
