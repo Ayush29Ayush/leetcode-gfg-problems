@@ -1,3 +1,4 @@
+// MY DISCUSS FORUM POST => https://leetcode.com/problems/gas-station/discuss/3011100/Easiest-C%2B%2B-solution-with-detailed-explanation
 class Solution {
 public:
     int canCompleteCircuit(vector<int>& gas, vector<int>& cost) {
