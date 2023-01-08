@@ -1,3 +1,5 @@
+// refer this video => https://www.youtube.com/watch?v=Y8_WxLKYQ6Q
+// MY DISCUSS FORUM POST => https://leetcode.com/problems/max-points-on-a-line/discuss/3016360/Easiest-C%2B%2B-solution-with-detailed-explanation
 class Solution {
 public:
     int maxPoints(vector<vector<int>>& points) {
