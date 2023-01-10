@@ -47,3 +47,12 @@ public:
         return answer;
     }
 };
+
+//! Approach3 => https://www.youtube.com/watch?v=z-NbVpzA_fs
+// Using MAX-HEAP
+// class Solution {
+// public:
+//     vector<vector<int>> kClosest(vector<vector<int>>& points, int k) {
+        
+//     }
+// };
