@@ -11,7 +11,7 @@
 
 // 1. pehle value ko vec mein daaldo
 // 2. reverse the vector so that 0 se n-1 tak power le sake, else bina reverse ke issue hota
-// 3. ans=0 karke for loop se power lagate jao vec[i] ke saath multiply kar karke\
+// 3. ans=0 karke for loop se power lagate jao vec[i] ke saath multiply kar karke
 // 4. return ans;
 
 
