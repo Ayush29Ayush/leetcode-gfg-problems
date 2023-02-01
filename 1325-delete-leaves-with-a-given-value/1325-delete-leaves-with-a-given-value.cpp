@@ -14,6 +14,7 @@ public:
     TreeNode* removeLeafNodes(TreeNode* root, int target) {
         if(root==NULL)
             return NULL;
+        //! POST ORDER se kiya yeh solve => LRN
         
         // root ka left aur right re-assign hoga, agar leaf hai aur target mil gaya toh ab NULL pe point karega whivh means leaf node ab nahi raha
         // agar essa nahi hai toh jo node tha vahi re-assign ho jayega i.e return root
