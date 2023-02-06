@@ -1,75 +1,78 @@
 class Solution {
 public:
-    vector<vector<int>> queensAttacktheKing(vector<vector<int>>& queens, vector<int>& king) {
-        vector<vector<int>> res;
-        vector<vector<int>> board(8, vector<int>(8, 0)); // create a 8*8 board and initialize all elements with 0
-        for (auto q : queens) {
-            board[q[0]][q[1]] = 1; // mark the position of queens with 1
+    vector<vector<int>> queensAttacktheKing(vector<vector<int>>& queens, vector<int>& king) 
+    {
+        vector<vector<int>> ans;
+        
+        // make a grid to track position of queens.
+        vector<vector<bool>> grid(8, vector<bool>(8, false));
+        for(auto v: queens)
+        {
+            grid[v[0]][v[1]] = true; //place queen
         }
         
-        // check the elements on the left side of king
-        for (int i = king[0] - 1; i >= 0; i--) {
-            if (board[i][king[1]] == 1) { // if it is a queen
-                res.push_back({i, king[1]}); // add to result
+        // SAME ROW
+        // check queens in same row towards right.
+        for(int j = king[1] + 1 ; j < 8 ; j++) {
+            if(grid[king[0]][j] == true) {
+                ans.push_back({king[0], j});
+                break;
+            }
+        }
+        // check queens in same row towards left.
+        for(int j = king[1] - 1 ; j >= 0 ; j--) {
+            if(grid[king[0]][j] == true) {
+                ans.push_back({king[0], j});
                 break;
             }
         }
         
-        // check the elements on the top side of king
-        for (int i = king[0] + 1; i < 8; i++) {
-            if (board[i][king[1]] == 1) {
-                res.push_back({i, king[1]});
+        // SAME COLUMN
+        // check queens in same col towards down.
+        for(int i = king[0] + 1 ; i < 8 ; i++) {
+            if(grid[i][king[1]] == true) {
+                ans.push_back({i, king[1]});
+                break;
+            }
+        }
+        // check queens in same col towards up.
+        for(int i = king[0] - 1 ; i >= 0 ; i--) {
+            if(grid[i][king[1]] == true) {
+                ans.push_back({i, king[1]});
                 break;
             }
         }
         
-        // check the elements on the right side of king
-        for (int i = king[1] - 1; i >= 0; i--) {
-            if (board[king[0]][i] == 1) {
-                res.push_back({king[0], i});
+        // CHECK DIAGONALS
+        // towards top left
+        for(int i = king[0], j = king[1] ; i >= 0 && j >= 0 ; i--, j--) {
+            if(grid[i][j] == true) {
+                ans.push_back({i, j});
+                break;
+            }
+        }
+        // towards top right
+        for(int i = king[0], j = king[1] ; i >= 0 && j < 8 ; i--, j++) {
+            if(grid[i][j] == true) {
+                ans.push_back({i, j});
+                break;
+            }
+        }
+        // towards bottom left
+        for(int i = king[0], j = king[1] ; i < 8 && j >= 0 ; i++, j--) {
+            if(grid[i][j] == true) {
+                ans.push_back({i, j});
+                break;
+            }
+        }
+        // towards bottom right
+        for(int i = king[0], j = king[1] ; i < 8 && j < 8 ; i++, j++) {
+            if(grid[i][j] == true) {
+                ans.push_back({i, j});
                 break;
             }
         }
         
-        // check the elements on the bottom side of king
-        for (int i = king[1] + 1; i < 8; i++) {
-            if (board[king[0]][i] == 1) {
-                res.push_back({king[0], i});
-                break;
-            }
-        }
-        
-        // check the elements on the left-top diagonal side of king
-        for (int i = king[0] - 1, j = king[1] - 1; i >= 0 && j >= 0; i--, j--) {
-            if (board[i][j] == 1) {
-                res.push_back({i, j});
-                break;
-            }
-        }
-        
-        // check the elements on the left-bottom diagonal side of king
-        for (int i = king[0] - 1, j = king[1] + 1; i >= 0 && j < 8; i--, j++) {
-            if (board[i][j] == 1) {
-                res.push_back({i, j});
-                break;
-            }
-        }
-        
-        // check the elements on the right-top diagonal side of king
-        for (int i = king[0] + 1, j = king[1] - 1; i < 8 && j >= 0; i++, j--) {
-            if (board[i][j] == 1) {
-                res.push_back({i, j});
-                break;
-            }
-        }
-        
-        // check the elements on the right-bottom diagonal side of king
-        for (int i = king[0] + 1, j = king[1] + 1; i < 8 && j < 8; i++, j++) {
-            if (board[i][j] == 1) {
-                res.push_back({i, j});
-                break;
-            }
-        }
-        return res;
+        return ans;
     }
 };
