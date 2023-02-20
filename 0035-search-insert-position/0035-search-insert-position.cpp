@@ -1,19 +1,25 @@
-// why return low? => https://leetcode.com/problems/search-insert-position/discuss/1596479/C%2B%2B-or-3-Solutions-or-Well-explained-with-example-and-concise-solution
 class Solution {
 public:
     int searchInsert(vector<int>& nums, int target) {
-     
-        int low = 0, high = nums.size()-1;
-        
-        while(low<=high){
-            int mid = low + (high-low)/2;
-            
-            if(nums[mid] == target) return mid;
-            
-            else if(nums[mid] > target) high = mid-1;
-            
-            else low = mid+1;
+        int low=0;
+        int high=nums.size();
+        int mid;
+        if(target>nums[high-1]){
+            return high;
         }
-        return low;
+        while(low<=high){
+              mid=(low+high)/2;
+            if(nums[mid]==target){  //if found return its position
+                return mid;
+            }
+          
+            if(target<nums[mid]){     
+            high=mid-1;    
+            }else{
+            low=mid+1;        
+            }
+          
+        }
+         return  low;   //if not found return the location where it should be
     }
 };
