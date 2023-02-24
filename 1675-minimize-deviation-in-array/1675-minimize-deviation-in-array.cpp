@@ -1,45 +1,40 @@
+// MAX difference => Max_elem - Min_elem
+// nums = [4,1,5,20,3]
+// To minimise the difference => Max_elem will decrease and Min_elem will increase.
+// multiplication will be done on Min_elem to increase its value thus minimise the difference.
+// division will be done on Max_elem to decrease its value thus maximise the difference.
+
+// multiplication on ODD elements with 2 can only be done once because result will be EVEN. and then we will get the maximum min_elem.
+// division on EVEN elements with 2 can be done.
+
+//! STEPS-
+// 1. Multiply all odd elements with 2.
+// 2. Pop max_elem from MAX_HEAP and find min_diff i.e diff = min(diff,max_elem - min_elem).
+// 3. Even max_elem gets divided by 2 and check if it got less than min_elem, if yes then it will get updated else will be pushed to heap.
+// 4. Pop karke Odd aaya toh kuch nahi kar sakte because multiply with 2 will increase max_elem which we don't want. So kuch mat karna.
+// 5. If max_elem odd aa gaya means this is the lowest possible max_element we can get.
+
 class Solution {
 public:
     int minimumDeviation(vector<int>& nums) {
-        int n = nums.size();
-        int mx = INT_MIN, mn = INT_MAX;
+        priority_queue<int> maxpq; //max heap
+        int m = INT_MAX, diff = INT_MAX;
         
-        // Increasing all elements to as maximum as it can and tranck the minimum,
-        // number and also the resutl
-        for(int i = 0; i<n; ++i)
-        {
-            if((nums[i]%2) != 0)    // multiplication by 2 if nums[i] is odd
-                nums[i] *= 2;   // maximising all odd numbers
-
-        
-            mx = max(mx,nums[i]);
-            mn = min(mn,nums[i]);
+        // step1
+        for(auto i : nums){
+            if(i%2 != 0) i*=2;
+            m = min(m, i);
+            maxpq.push(i);
         }
-        
-        int min_deviation = mx - mn;
-        
-        priority_queue<int> pq;
-        // Inserting into Priority queue (Max Heap) and try to decrease as much we can
-        for(int i = 0; i<n; ++i)
-        {
-            pq.push(nums[i]);
+        // step 2,3,4,5
+        while(maxpq.top()%2 == 0) {
+            int mx = maxpq.top();
+            maxpq.pop();
+            diff = min(diff, mx - m);
+            m = min(m, mx/2);
+            maxpq.push(mx/2);
         }
-        
-        while((pq.top()) % 2 == 0)
-        {
-            int top = pq.top();
-            pq.pop(); // popped the top element
-            
-            min_deviation = min(min_deviation, top - mn);
-            top /= 2;
-            mn = min(mn, top);  // updating min
-            pq.push(top);   // pushing again the top as we have to minimize the max
-        }
-        
-        min_deviation = min(min_deviation, pq.top() - mn);
-        
-        // we are returning mx - mn
-        
-        return min_deviation;
+        // ab minimum return kardo
+        return min(diff, maxpq.top() - m);
     }
 };
