@@ -14,6 +14,7 @@
 // 4. Pop karke Odd aaya toh kuch nahi kar sakte because multiply with 2 will increase max_elem which we don't want. So kuch mat karna.
 // 5. If max_elem odd aa gaya means this is the lowest possible max_element we can get.
 
+// refer this => https://www.youtube.com/watch?v=AJvWDrBJ2IM&t=2s
 class Solution {
 public:
     int minimumDeviation(vector<int>& nums) {
