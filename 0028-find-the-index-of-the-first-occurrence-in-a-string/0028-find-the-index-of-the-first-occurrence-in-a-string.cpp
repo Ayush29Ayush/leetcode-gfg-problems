@@ -1,3 +1,4 @@
+// refer gfg article on find and npos if any doubts
 class Solution {
 public:
     int strStr(string haystack, string needle) {
@@ -10,6 +11,7 @@ public:
             return 0;
         
         // Find position of string needle in haystack
+        // find gives the first occurrence of the string if it exists in the bigger string
         int found = haystack.find(needle);
         
         // Check if position is -1 or not
