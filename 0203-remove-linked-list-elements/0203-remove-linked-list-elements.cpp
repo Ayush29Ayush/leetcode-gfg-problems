@@ -12,7 +12,7 @@ class Solution {
 public:
     
     ListNode* solve(ListNode* head,int val){
-        if(!head){
+        if(head==NULL){
             return NULL;
         }
         
