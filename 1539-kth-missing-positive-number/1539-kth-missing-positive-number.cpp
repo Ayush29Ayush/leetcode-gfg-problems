@@ -1,9 +1,14 @@
+// the highest number in the array can be 1000 and the highest k can be 1000,then the loop should run from 1 to 2000.
+// manlo ki arr mein 1 se 1000 tak sab elements present hai and k=1000th missing element maang raha hai toh kya karoge
+// isiliye 1000+1000=2000 tak loop chalega 
+
+// Brute Force 1
 class Solution {
 public:
     int findKthPositive(vector<int>& arr, int k) {
         int n = arr.size();
         // int mini = *min_element(arr,arr+n);
-        // int maxi = *max_element(arr,arr+n);
+        // int maxi = *max_element(arr.begin(),arr.end());
         vector<int> missing;
         set<int> s;
         
@@ -21,6 +26,7 @@ public:
     }
 };
 
+// Brute Force 2
 // class Solution {
 // public:
 //     int findKthPositive(vector<int>& arr, int k) {
