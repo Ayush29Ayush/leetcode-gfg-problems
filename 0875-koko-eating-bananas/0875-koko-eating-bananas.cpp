@@ -1,3 +1,5 @@
+// pepcoding ka video dekh lena if needed
+
 //! BINARY SEARCH se karenge since searching karna padega suitable speed ka
 // low_speed = 1 because ek banana toh khana hi padega
 // high_speed = max(piles[i]) because uske baad se time constant hi ho jayega
