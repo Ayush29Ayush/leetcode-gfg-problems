@@ -9,23 +9,35 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
+
+
+/*
+    MY YOUTUBE VIDEO ON THIS Qn : https://www.youtube.com/watch?v=lHLW1L8Qc5w
+    Company Tags                : Amazon, Microsoft, Mentor (Siemens)
+    Leetcode Link               : https://leetcode.com/problems/symmetric-tree/
+*/
+
 class Solution {
 public:
-    bool isSymmetric(TreeNode* root) {
-        // Special case...
-        if(root == nullptr) return true;
-        // Return the function recursively...
-        return isSymmetric(root->left,root->right);
+    
+    bool check(TreeNode* l, TreeNode* r) {
+        // base case
+        if(l == NULL && r == NULL)
+            return true;
+        if(l == NULL || r == NULL)
+            return false;
+        
+        // if every condition for symmetric matches then return true else false
+        if(l->val == r->val && check(l->left, r->right) && check(l->right, r->left))
+            return true;
+        
+        return false;
     }
-    // A tree is called symmetric if the left subtree must be a mirror reflection of the right subtree...
-    bool isSymmetric(TreeNode* leftroot,TreeNode* rightroot){
-        // If both root nodes are null pointers, return true...
-        if(!leftroot && !rightroot)  return true;
-        // If exactly one of them is a null node, return false...
-        if(!leftroot || !rightroot)  return false;
-        // If root nodes haven't same value, return false...
-        if(leftroot->val != rightroot->val)  return false;
-        // Return true if the values of root nodes are same and left as well as right subtrees are symmetric...
-        return isSymmetric(leftroot->left, rightroot->right) && isSymmetric(leftroot->right, rightroot->left);
+    
+    bool isSymmetric(TreeNode* root) {
+        if(root == NULL)
+            return true;
+        
+        return check(root->left, root->right);
     }
 };
