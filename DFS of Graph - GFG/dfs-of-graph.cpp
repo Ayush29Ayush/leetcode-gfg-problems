@@ -18,7 +18,7 @@ class Solution {
         
         // Now yahan ka kaam ho gaya so do further DFS traversal
         // int &v : adj[u] means =>     0->1,2 and here 0 is u and 1,2 are v
-        for(int &v : adj[u])
+        for(auto v : adj[u])
         {
             // agar v visited nahi hai toh hi DFS lagega else infinite loop mein code phas jayega
             if(!visited[v])
