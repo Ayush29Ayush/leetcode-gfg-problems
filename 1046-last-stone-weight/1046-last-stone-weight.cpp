@@ -5,6 +5,8 @@ class Solution {
 public:
      int lastStoneWeight(vector<int>& stones) 
     {
+         // This is a max-heap
+         // By default, a priority queue in C++ is a max-heap, meaning that the element with the highest priority (i.e. the largest element) is always at the top of the queue.
         priority_queue<int> pq(stones.begin(),stones.end());
         while(pq.size()>1)
         {
