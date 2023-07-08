@@ -51,32 +51,38 @@
 //     }
 // };
 
-//Approach - 3 (Time Complexity : O(32*n))
+//Approach - 3 (Time Complexity : O(32*n)) Using Bit Manipulation
 class Solution {
 public:
     int singleNumber(vector<int>& nums) {
         int result = 0;
         
-        for(int i = 0; i<32; i++) {
-            int temp = (1 << i);
-            
-            int countOne  = 0;
+        for(int k=0; k<32; k++)
+        {
             int countZero = 0;
+            int countOnes = 0;
             
-            for(int &num : nums) {
-                if((num&temp) == 0) {
+            int temp = (1<<k);
+            
+            // ab har number ka kth bit nikal lenge
+            for(auto number : nums)
+            {
+                // if kth bit is zero
+                if((number&temp)==0)
                     countZero++;
-                } else {
-                    countOne++;
-                }
+                else
+                    countOnes++;
             }
             
-            if(countOne % 3 == 1) {
+            // ab agar ones 4 times hai, means 3 times plus one time extra. So result ke bits mein kth bit add kardo using OR operator
+            // countZero ka condition nahi dekh rahe because result=0 se initialize hua tha so by default sab bits 0 hi hai
+            if(countOnes % 3 == 1)
+            {
                 result = (result | temp);
             }
-            
         }
         
+        // ab last mein jo result form hua hoga that will be the single freq number
         return result;
     }
 };
