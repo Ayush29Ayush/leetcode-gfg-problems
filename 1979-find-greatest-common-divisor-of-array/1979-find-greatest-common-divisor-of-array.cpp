@@ -10,9 +10,9 @@ public:
         while(maxi>0 && mini>0)
         {
             if(maxi>mini)
-                maxi = maxi%mini;
+                maxi = maxi-mini; // maxi = maxi%mini;
             else
-                mini = mini%maxi;
+                mini = mini-maxi; // mini = mini-maxi;
         }
         
         if(maxi==0)
